@@ -6,7 +6,10 @@ const cors = require('cors')
 const fs = require('fs')
 var https = require('https');
 var http = require('http')
-app.use(express.urlencoded());
+//app.use(express.urlencoded());
+//app.use(bodyParser.urlencoded({ extended: true }));
+// https://stackoverflow.com/questions/25471856/express-throws-error-as-body-parser-deprecated-undefined-extended
+app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
   var ca;
@@ -74,7 +77,6 @@ app.post('/test', cors(), (req, res, next) => {
 })
 
 app.post('/process_post', cors(), (req, res, next) => {
-  
     // Prepare output in JSON format.
     response ={myQuery: req.query.first_name }
     console.log(response);
@@ -93,4 +95,3 @@ http.createServer(app).listen(80);
 //app.listen(3000);
 // console.log(' HTTPS Application listening @port 443');
  https.createServer(options, app).listen(443);
-
