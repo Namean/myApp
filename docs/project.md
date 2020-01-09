@@ -123,4 +123,38 @@ This technique also allows for multi part form data to be sent!
 
 
 
+# fs.writeFile()
+https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback
+// const data = new Uint8Array(Buffer.from('Hello Node.js'));
+const data = JSON.stringify({"msg": "Great job!"});
+fs.writeFile('message.txt', data, (err) => {
+  if (err) throw err;
+  console.log('The file has been saved!');
+});
 
+
+# fs.readFile()
+fs.readFile('/etc/passwd', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+I remeber having trouble with this particular function,
+I may fallback to fs.readFileSync()
+
+# fs.readFileSync()
+fs.readFileSync('<file_name>');
+
+
+
+# Checking File existance?
+Should this be a function of the code itself or can I reach out to the OS to
+perform such a utility?
+
+cmd: 
+    https://superuser.com/questions/541534/check-whether-a-file-folder-exists-with-cmd-command-line-not-batch-script
+    C:\ IF EXIST C:\CONFIG.SYS ECHO C:\CONFIG.SYS exists.
+bash: 
+powershell:
+python:
+node:

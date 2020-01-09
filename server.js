@@ -64,11 +64,6 @@ app.post('/post', cors(), (req, res, next) => {
 })
 
 app.post('/test', cors(), (req, res, next) => {
-//  res.json({ msg: 'POST received' })
-//    response = {
-//		my_query: req.query.my_query,
-//
-//	};
     console.log("You've hit the /test endpoint!");
     const username = req.body.username;
     const password = req.body.password;
