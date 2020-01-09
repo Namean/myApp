@@ -1,5 +1,5 @@
 function makeWebRequest(method, url) {
-//    method = typeof method !== 'undefined' ? method : 'GET';
+    //    method = typeof method !== 'undefined' ? method : 'GET';
     console.log('making web request');
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -30,10 +30,13 @@ btn.onclick();
 
 
 function main() {
-   let note = new Note(
-    "Activate phone today",
-    " Head down to T-mobile to get your phone on."
-);
+    let note = new Note(
+        "Activate phone today",
+        " Head down to T-mobile to get your phone on."
+    );
 
-  addData(note); 
+    addData(note);
 }
+
+
+
